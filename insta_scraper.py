@@ -30,13 +30,10 @@ class InstagramScraper:
     def generate_unfollowers_list(self):
 
         unfollow_list = np.setdiff1d(self.following_list, self.followers_list) # unfollow people who are only in following list and not in followers list
-        #print("People to unfollow: ", unfollow_list)
-
         ydfb_list = []
         for a in self.followers_list:
             if a not in self.following_list:
                 ydfb_list.append(a)
-
         filename = "user_list.txt"
         file = open(filename, "w")
         file.write("\n\nTHEY DON'T FOLLOW BACK\n\n")
@@ -46,4 +43,3 @@ class InstagramScraper:
         for person in ydfb_list:
             file.write(person + "\n")
         file.close()
-
