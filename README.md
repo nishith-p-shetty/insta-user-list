@@ -15,3 +15,5 @@ or
 ~~~
 python main.py --username your.user_name.here --password YourPasswordHere
 ~~~
+# Next
+* open user_list.txt
