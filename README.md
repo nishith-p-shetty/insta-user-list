@@ -7,6 +7,7 @@ ie it give the list of accounts who.
 ~~~
 pip install instaloader
 ~~~
+# Run
 ~~~
 python3 main.py --username your.user_name.here --password YourPasswordHere
 ~~~
