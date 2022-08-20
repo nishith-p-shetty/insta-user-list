@@ -5,7 +5,7 @@ ie it give the list of accounts who.
 * you follow but they dont follow back.
 # Requirments
 ~~~
-pip install instaloader
+pip install -r requirement.txt
 ~~~
 # Run
 ~~~
