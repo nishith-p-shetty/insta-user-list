@@ -28,7 +28,7 @@ for i in FOLLOWING:
     if i not in FOLLOWERS:
         i_flwng_oth_no_flbk.append(i)
 
-with open('./index.html', 'w') as file:
+with open('./index1.html', 'w') as file:
     file.write('''<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -51,46 +51,25 @@ with open('./index.html', 'w') as file:
             <caption>To Unfollow</caption>
 			<tr>
                 <th>Sl. No.</th>
-				<th>Profile Picture</th>
-				<th>Name</th>
 				<th>Username</th>
-				<th>Bio</th>
-                <th>Post Count</th>
-				<th>Followers</th>
-				<th>Following</th>
-				<th>Is Private</th>
 			</tr>
             <tr>
                 <td></td>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
 			</tr>''')
 
-with open('./index.html', 'a') as file:
-    for idx, usrname in enumerate(i_flwng_oth_no_flbk):
+with open('./index1.html', 'a') as file:
+    for index, usrname in enumerate(i_flwng_oth_no_flbk):
         profile = instaloader.Profile.from_username(L.context, usrname)
         file.write(f'''
     			<tr>
-                    <td>{idx}</td>
-    				<td><a href="{profile.profile_pic_url}" target="_blank">Pic</a></td>
-    				<td>{profile.full_name}</td>
+                    <td>{index+1}</td>
     				<td>
     					<a href="https://www.instagram.com/{profile.username}/"target="_blank">{profile.username}</a>
     				</td>
-    				<td>{profile.biography}</td>
-    				<td>{profile.get_posts().count}</td>
-    				<td>{profile.followers}</td>
-    				<td>{profile.followees}</td>
-    				<td>{profile.is_private}</td>
                 </tr>''')
 
-with open('./index.html', 'a') as file:
+with open('./index1.html', 'a') as file:
     file.write('''
 		</table>
         <br>
@@ -100,46 +79,25 @@ with open('./index.html', 'a') as file:
             <caption>To Follow</caption>
 			<tr>
                 <th>Sl. No.</th>
-				<th>Profile Picture</th>
-				<th>Name</th>
 				<th>Username</th>
-				<th>Bio</th>
-                <th>Post Count</th>
-				<th>Followers</th>
-				<th>Following</th>
-				<th>Is Private</th>
 			</tr>
             <tr>
                 <td></td>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
 			</tr>''')
 
-with open('./index.html', 'a') as file:
-    for idx, usrname in enumerate(oth_flwing_me_no_flbk):
+with open('./index1.html', 'a') as file:
+    for index, usrname in enumerate(oth_flwing_me_no_flbk):
         profile = instaloader.Profile.from_username(L.context, usrname)
         file.write(f'''
     			<tr>
-                    <td>{idx}</td>
-    				<td><a href="{profile.profile_pic_url}" target="_blank">Pic</a></td>
-    				<td>{profile.full_name}</td>
+                    <td>{index+1}</td>
     				<td>
     					<a href="https://www.instagram.com/{profile.username}/"target="_blank">{profile.username}</a>
     				</td>
-    				<td>{profile.biography}</td>
-    				<td>{profile.get_posts().count}</td>
-    				<td>{profile.followers}</td>
-    				<td>{profile.followees}</td>
-    				<td>{profile.is_private}</td>
                 </tr>''')
 
-with open('./index.html', 'a') as file:
+with open('./index1.html', 'a') as file:
     file.write('''
 		</table>
 	</body>
